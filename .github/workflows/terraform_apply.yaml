@@ -16,8 +16,8 @@ jobs:
       - name: Terraform Init
         run: terraform init
 
-      - name: Terraform Apply
+      - name: Terraform Plan
         env:
           TF_VAR_snowflake_private_key: ${{ secrets.SNOWFLAKE_PRIVATE_KEY }}
-        run: terraform apply -refresh-only -auto-approve
+        run: terraform Plan -auto-approve
     
